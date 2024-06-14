@@ -26,13 +26,17 @@ const Header = () => {
     }
   ])
 
+  const handleNotification = () => {
+    setMyNotifications([]);
+  }
+
   return (
     <div className="grid grid-cols-2 border-b p-4 gap-4">
       <SearchBar />
       <div className="flex items-center justify-end gap-4">
         <DropdownMenu>
             <DropdownMenuTrigger>
-            <Button className="relative" variant="outline" size="icon">
+            <Button onClick={handleNotification} className="relative" variant="outline" size="icon">
             <div className={`absolute -top-2 -right-1 h-3 w-3 rounded-full my-1 ${myNotifications.find((x) => x.read === true) ? 'bg-green-800' : 'bg-gray-200'}`}></div>
                 <BellIcon className="h-4 w-4" />
             </Button>
