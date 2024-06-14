@@ -205,7 +205,16 @@ const EditSessionModal = ({
                 <FormItem>
                   <FormLabel>Generate Invoice</FormLabel>
                   <FormControl>
-                    <input type="checkbox" {...field} className="border ml-2 rounded" />
+                    {/* <input  type="checkbox" {...field} className="border ml-2 rounded" /> */}
+                    <select
+                        {...field}
+                        className="border p-2 rounded w-full"
+                        onChange={(e) => field.onChange(e.target.value === "true")}
+                        value={field.value ? "true" : "false"}
+                      >
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
