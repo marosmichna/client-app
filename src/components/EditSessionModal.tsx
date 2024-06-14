@@ -76,10 +76,7 @@ const EditSessionModal = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-      <div className="bg-white p-6 rounded shadow-lg w-1/2">
-        <button onClick={onClose} className="absolute top-2 right-2 text-red-600">
-          X
-        </button>
+      <div className="bg-white p-4 rounded shadow-lg w-3/5 h-4/5 overflow-y-auto">
         <h2 className="text-xl font-semibold mb-4">Edit Session</h2>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
